@@ -1,0 +1,20 @@
+root: &start
+  description: "You are on a straight path. Going straight continues forever."
+  exits:
+    straight: *start
+    left:
+      description: "A small clearing with a pot of gold."
+      encounter: pot_of_gold
+      end: false
+      exits:
+        back: *start
+    right:
+      description: "A blazing pit of fire."
+      encounter: fire
+      end: true
+    inspect ceiling:
+      description: "You look up at the ceiling. Shadows move and a ghoul hangs there."
+      encounter: ghoul
+      end: false
+      exits:
+        back: *start
